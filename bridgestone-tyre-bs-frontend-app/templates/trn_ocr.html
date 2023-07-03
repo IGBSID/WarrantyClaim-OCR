@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/template_css.css')}}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min." />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+
+</head>
+<body>
+    {% block content %}
+    <div >
+        <!--Logo Section-->
+        <div class="row m-r-0 m-l-0">
+           
+            <img src="{{ url_for ('static', filename='images/Bridgestone-logo.png')}}"
+                style="width:250px;height:70px;margin: 1%;" />
+        </div>
+
+        <!--Menu Section-->
+        <div class="row m-r-0 m-l-0">
+            <div class="topnav">
+                <ul>
+                    <a href="{{ url_for('home_page') }}">HOME</a>
+                    <a class="active" href="{{ url_for('trn') }}">TRN</a>
+                    <a href="{{ url_for('tsn') }}">TSN</a>
+                    <a href="{{ url_for('damage') }}">Damage</a>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Body section -->
+        <div class="row m-r-0 m-l-0">
+            <div class="col-sm-5 text-center">
+                <form id="upload-file" method="post" action="/trn" enctype="multipart/form-data">
+                    <div class="row">
+                        <label style="font-size: medium ;margin-top: 5%;" class="btn btn-primary dropdown-toggle" for="damage_img">
+                            Upload TRN Image</label>
+                        <input type="file" name="Image_List" id="damage_img" onchange="readOCR(this);" style="display: none;" />
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            {% if filenames %}
+                                {% for filename in filenames %}
+                                    <div>
+                                        <img class="image-preview-section" id="image"
+                                            src="{{ url_for('display_image', filename=filename) }}">
+                                    </div>
+                                {% endfor %}
+                            {% else %}
+                                <div>
+                                    <img class="image-preview-section" id="image" src="" style="display: none;"/>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                
+                </form>
+            </div>
+            <div class="col-sm-7">
+                <div class="row">
+                    <button type="button" id="submitbutton" style="font-size: medium;margin-top:4%;"
+                    class="btn btn-primary dropdown-toggle">Extract Text </button>
+                </div>
+                <div id='loader' class="ajax-loader">
+                    <img src='./static/images/wait.gif'  class="img-responsive">
+                </div>
+                <div class="row">
+                    <div style="padding:20px;">
+                        <p>
+                            {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                        <ul class=flashes>
+                            {% for message in messages %}
+                            <li>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        {% endwith %}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <form>
+                        <label class="fa-3x" id="extracted_value">{{ocr_result}}</label>
+                        <br/>
+                        <p style="color: dimgray; font-size: medium;">Is the above text correct? If no, please write actual text.</p>
+                        <br/>
+                        <input style="outline: none;margin-bottom: 10px;" type="text" name="trn_ocr" />
+                        <br/>
+                        <br>
+                        <br>
+                        <input style="font-size: medium;" type="button" id='button' value="Submit"
+                        class="btn btn-primary" onclick="displayMessage()">
+
+                        <button id="cancel" name="Cancel" class="btn btn-default" class="btn btn-primary" type="button"
+                        onclick="cancelTrnRecord()">Cancel</button>
+                        <p id="texto" style="margin-top: 10px;" class="fa-2x"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+<script src="{{ url_for ('static', filename= 'js/main.js' )}}"></script>
+
+<script>
+    function displayMessage() 
+    {
+        document.getElementById('texto').innerHTML = "Thank You For FeedBack!";
+    }
+    $(function () {
+        
+        $('#submitbutton').click(function () {
+
+        
+            debugger;
+            var form_data = new FormData($('#upload-file')[0]);
+            console.log(form_data);
+            $.ajax({
+                type: 'POST',
+                url: '/trn',
+                data: form_data,
+                contentType: false,
+                cache: false,
+                processData: false,
+                beforeSend: function () {
+                    $("#loader").css("visibility", "visible");
+                },
+                success: function (response) {
+                    debugger;
+
+                    console.log(response)
+                    $("#extracted_value").html(response.ocr_result);   
+                },
+                complete: function (data) {
+                    $("#loader").css("visibility", "hidden");
+                },
+            });
+        });
+    });
+</script>
+
+</html>

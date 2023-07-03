@@ -1,0 +1,257 @@
+.body {
+  font-family: ‘Segoe UI’;
+  font-size: 12pt;
+}
+
+header h1 {
+  font-size: 12pt;
+  color: #fff;
+  background-color: #1BA1E2;
+  padding: 20px;
+}
+
+article {
+  width: 80%;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.thumbnail {
+  height: 100px;
+  margin: 10px;
+}
+
+
+
+
+.topnav {
+  background-color: rgb(67, 63, 63);
+  overflow: hidden;
+}
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #f7281d;
+  color: white;
+}
+
+.nav{
+
+width: 100%;
+height: 50px;
+line-height: 75px;
+padding: 0px 0px;
+position: fixed;
+background-image: linear-gradient(#eff3f4,#f3f9fa);
+margin-top: 0px;
+}
+
+.div{
+  padding-left: 40px;
+}
+
+.nav ul{
+float: left; 
+/* margin-top: 5%;    */
+}
+
+.nav li{
+
+display: inline-block;
+list-style: none;
+}
+
+.nav li a{
+font-size: 15px;
+text-transform: uppercase;
+padding: 0px 7px;
+color: black;
+text-decoration: none;
+margin-top: 50%;
+}
+
+.nav li a:hover{
+color: #ff8c69;
+transition: all 0.4s ease 0s;
+
+}
+
+p.groove {border-style: groove;}
+
+
+.dropdown {
+  /* position: relative; */
+  margin-left: 0px;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.submit {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.submit .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+.submit .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.submit .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  /* overflow: hidden; */
+  display: inline-block;
+}
+
+.btn {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.ajax-loader {
+visibility: hidden;
+background-color: rgba(255,255,255,0.7);
+/* position: absolute; */
+z-index: +100 !important;
+/* width: 100%;
+height:100%; */
+}
+
+.ajax-loader img {
+position: absolute;
+top:50%;
+left:30%;
+}
+
+/* Common classes */
+.p-0
+{
+  padding: 0px !important;
+}
+
+
+.m-0
+{
+  margin: 0px !important;
+}
+
+.m-r-0
+{
+  margin-right: 0px !important;
+}
+
+.m-l-0
+{
+  margin-left: 0px !important;
+}
+
+
+.image-preview-section
+{
+  height: 350px;
+  width: 400px;
+  margin: auto;
+  margin-top: 5%;
+}

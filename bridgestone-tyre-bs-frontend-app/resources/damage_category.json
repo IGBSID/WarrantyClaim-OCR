@@ -1,0 +1,30 @@
+{
+    "Bead Burst":"Bead Bursting",
+    "Ply End Seperation": "Ply End Separation",   
+    "TreadCut Burst": "Tread Cut Burst",    
+    "TreadCut Separation": "Tread Cut Separation",
+    "Zipper Damage": "Zipper(CBU - Fatigue Rapture)",
+    "Running Flat" : "Running Flat",
+    "Thin Inner Liner Gauge" : "Thin Inner Liner Gauge",
+    "Diagonal Wear" : "Diagonal Wear",   
+    "Side Wall Undulation" : "Side wall Undulation",
+    "Other Separations":
+        {
+            "BeltEdgeSeperation":"Belt Edge Seperation",
+            "ThreadLeavingBelt":"Thread Leaving Casing",
+            "BeltLeavingBelt": "Belt Leaving Belt",
+            "ThinInnerLinerGuage":"Thin Inner Liner Guage"
+        },
+    "Side Wall Damage":
+    {
+        "SideWallCutPenetration": "Sidewall Cut Penetration",
+        "SidewallCut" : "Sidewall Cut"
+    },
+    "Tread Damage":
+        {
+            "TreadCutPenetration": "Tread Cut Penetration",
+            "ThreadCut": "Thread Cut"
+
+        }
+    
+}
