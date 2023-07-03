@@ -1,0 +1,26 @@
+export AZURE_CONTAINER_NAME=eclaims-app-images
+export AZURE_CONNECTION_STRING="DefaultEndpointsProtocol=https;AccountName=amlincappadpro7010779476;AccountKey=TK19bDYV5GCKVT4D7ViFjJpprD19aZ+evj4RyddkIchRj32ZkioggLfSVWV1MXVY9eymjlOZm084+ASt54qAuQ==;EndpointSuffix=core.windows.net"
+export AZURE_FOLDER_NAME=damage_category_images
+export APP_SECRET=MriszUcbTW9b1sFyJk5rwP6QOQ3kkQJe
+export SQL_DB_SERVER=sql-in-cappa-d-domain-001.database.windows.net
+export SQL_DB_DATABASE=automatedwarrantyclaim
+export SQL_DB_USERNAME=automatedwarrantyclaim
+export SQL_DB_PASSWORD=d6a356bd-7d5b-479e-9c8c-1efec6752b6d
+export SQL_DB_DRIVER="{ODBC Driver 18 for SQL Server}"
+export DAMAGE_CATEGORY_ENDPOINT=https://cvincappadproduct004-prediction.cognitiveservices.azure.com/
+export PREDICTION_KEY=384aea36e0e4441590ba6876124e795b
+export PROJECT_ID=2084fc8c-ee15-44f5-81c9-feff7a40a465
+export PUBLISH_ITERATION_NAME=V3_7D
+export AUTH_TOKEN=31cb52c2-7b79-11ed-a1eb-0242ac120002
+export PUBLISH_ITERATION_NAME_C0=C0
+export PUBLISH_ITERATION_NAME_C1=C1
+export PUBLISH_ITERATION_NAME_C2=C2
+export PUBLISH_ITERATION_NAME_C3=C3
+export PUBLISH_ITERATION_NAME_C4=C4
+export PUBLISH_ITERATION_NAME_C5=C5
+export PROJECT_ID_C0=318dd0e4-b3c3-4d22-9275-18a40dbc0de0
+export PROJECT_ID_C1=8f2d2111-2c09-42d2-af08-2550e5d57499
+export PROJECT_ID_C2=c8821b0a-dba6-4aa7-a7c9-f8a5fc62ad46
+export PROJECT_ID_C3=bc99acac-bbd8-494d-b0bf-669e690965b9
+export PROJECT_ID_C4=33661a57-ff7f-44f8-841e-4bbfd9c358b2
+export PROJECT_ID_C5=2f73c6df-58af-4b20-917f-a9212e7aa43e
